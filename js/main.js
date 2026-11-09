@@ -100,6 +100,60 @@
     items.forEach(function (el) { el.classList.add("is-in"); });
   }
 
+  /* вопросы: плавное раскрытие */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".faq details").forEach(function (d) {
+    var summary = d.querySelector("summary");
+    var body = d.querySelector("p");
+    var anim = null, fade = null;
+    var ease = "cubic-bezier(.4, 0, .2, 1)";
+
+    summary.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (reduce || !d.animate) { d.open = !d.open; return; }
+
+      if (anim) anim.cancel();
+      if (fade) fade.cancel();
+
+      var borders = d.offsetHeight - d.clientHeight;
+      var closedH = summary.offsetHeight + borders;
+      var start = d.offsetHeight;
+      var opening = !d.open;
+      var end;
+
+      d.style.overflow = "hidden";
+      if (opening) {
+        d.open = true;
+        end = d.scrollHeight + borders;
+        fade = body.animate(
+          [{ opacity: 0, transform: "translateY(-8px)" }, { opacity: 1, transform: "none" }],
+          { duration: 420, easing: ease, delay: 60, fill: "backwards" }
+        );
+      } else {
+        end = closedH;
+        fade = body.animate(
+          [{ opacity: 1, transform: "none" }, { opacity: 0, transform: "translateY(-6px)" }],
+          { duration: 220, easing: ease, fill: "forwards" }
+        );
+      }
+
+      anim = d.animate(
+        [{ height: start + "px" }, { height: end + "px" }],
+        { duration: opening ? 420 : 340, easing: ease }
+      );
+      d.classList.toggle("is-closing", !opening);
+
+      anim.onfinish = function () {
+        d.open = opening;
+        d.style.overflow = "";
+        d.classList.remove("is-closing");
+        if (!opening && fade) fade.cancel();
+        anim = null; fade = null;
+      };
+      anim.oncancel = function () { d.style.overflow = ""; };
+    });
+  });
+
   /* форма -> whatsapp */
   var form = document.getElementById("form");
   var err = document.getElementById("form-error");
