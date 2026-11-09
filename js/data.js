@@ -53,10 +53,10 @@ window.CLINIC = {
   /* команда: имя и должность можно оставить пустыми — подпись тогда скрывается.
      фото лежат в img/, порядок = порядок на сайте */
   team: [
-    { photo: "img/doc-1.webp", name: "", role: "" },
-    { photo: "img/doc-2.webp", name: "", role: "" },
-    { photo: "img/doc-3.webp", name: "", role: "" },
-    { photo: "img/doc-4.webp", name: "", role: "" },
-    { photo: "img/doc-5.webp", name: "", role: "" }
+    { photo: "img/doc-1.webp", name: "Кирилл Окроевич", role: "" },
+    { photo: "img/doc-2.webp", name: "Вивади Адилоглы", role: "" },
+    { photo: "img/doc-3.webp", name: "Мирас Куанышевич", role: "" },
+    { photo: "img/doc-4.webp", name: "Айнур Сериковна", role: "" },
+    { photo: "img/doc-5.webp", name: "Дильнара Эркиновна", role: "" }
   ]
 };
