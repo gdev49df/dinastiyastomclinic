@@ -161,17 +161,19 @@
     err.textContent = msg; err.hidden = false;
     if (field) { field.classList.add("is-bad"); field.focus(); }
   }
-  form.addEventListener("input", function (e) { e.target.classList.remove("is-bad"); err.hidden = true; });
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var name = form.elements.name.value.trim();
-    var phone = form.elements.phone.value.trim();
-    var topic = form.elements.topic.value;
-    var digits = phone.replace(/\D/g, "");
-    if (name.length < 2) return showError("Укажите, как к вам обращаться", form.elements.name);
-    if (digits.length < 10) return showError("Проверьте номер телефона", form.elements.phone);
-    var text = "Здравствуйте! Меня зовут " + name + ". Мой телефон: " + phone + "." +
-      (topic ? " Интересует: " + topic + "." : "") + " Прошу связаться со мной для записи на приём.";
-    window.open(waLink(text), "_blank", "noopener");
-  });
+  if (form) {
+    form.addEventListener("input", function (e) { e.target.classList.remove("is-bad"); err.hidden = true; });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = form.elements.name.value.trim();
+      var phone = form.elements.phone.value.trim();
+      var topic = form.elements.topic.value;
+      var digits = phone.replace(/\D/g, "");
+      if (name.length < 2) return showError("Укажите, как к вам обращаться", form.elements.name);
+      if (digits.length < 10) return showError("Проверьте номер телефона", form.elements.phone);
+      var text = "Здравствуйте! Меня зовут " + name + ". Мой телефон: " + phone + "." +
+        (topic ? " Интересует: " + topic + "." : "") + " Прошу связаться со мной для записи на приём.";
+      window.open(waLink(text), "_blank", "noopener");
+    });
+  }
 })();
