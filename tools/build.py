@@ -578,7 +578,54 @@ def write(name, content):
         f.write(content)
 
 
+def page404():
+    chips = "".join(f'<li><a href="{h}">{escape(title)}</a></li>' for h, title, _ in SERVICES)
+    return f'''<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Страница не найдена | Dinastiya Stom Clinic</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#fbf9f4">
+  <link rel="icon" href="/img/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+{header()}
+
+<main>
+  <section class="notfound">
+    <div class="wrap notfound__in">
+      <p class="notfound__code" aria-hidden="true">404</p>
+      <h1>Такой страницы нет</h1>
+      <p class="lead">Возможно, ссылка устарела или в адресе опечатка. Вернитесь на главную или выберите нужную услугу.</p>
+      <div class="notfound__cta">
+        <a class="btn btn--gold" href="/">На главную</a>
+        {btn_wa("Здравствуйте! Хочу записаться на приём.", "Записаться на приём", "btn--ghost")}
+      </div>
+      <ul class="chips notfound__links">{chips}</ul>
+    </div>
+  </section>
+</main>
+
+{footer_html()}
+
+{fab()}
+
+<script src="/js/data.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
+'''
+
+
 def main():
+    write("404.html", page404())
     for p in PAGES:
         write(p["slug"], page(p))
     idx_path = os.path.join(ROOT, "index.html")
@@ -595,7 +642,7 @@ def main():
     sm += "</urlset>\n"
     write("sitemap.xml", sm)
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
-    print("готово:", ", ".join(p["slug"] for p in PAGES))
+    print("готово:", ", ".join(["404.html"] + [p["slug"] for p in PAGES]))
 
 
 if __name__ == "__main__":

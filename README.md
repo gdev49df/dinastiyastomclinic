@@ -6,7 +6,8 @@
 
 - `index.html` — главная страница (правится вручную)
 - `implantation.html`, `orthodontics.html`, `therapy.html`, `orthopedics.html`, `kids.html` — страницы услуг, **создаются генератором**, руками не править
-- `tools/build.py` — генератор страниц услуг, а также `sitemap.xml` и `robots.txt`
+- `404.html` — страница «не найдено», github pages показывает её сам для любого несуществующего адреса, **создаётся генератором**
+- `tools/build.py` — генератор страниц услуг и 404, а также `sitemap.xml` и `robots.txt`
 - `css/style.css` — стили
 - `js/data.js` — контакты, отзывы, врачи на главной
 - `js/main.js` — меню, анимации, форма заявки в WhatsApp
@@ -36,7 +37,7 @@ canonical и sitemap используют короткие адреса. Пут�
 python3 tools/serve.py
 ```
 
-Открыть http://localhost:8000. Обычный `python3 -m http.server` не подойдёт: он не понимает адреса без `.html`.
+Открыть http://localhost:8000 (несуществующие адреса отдают 404.html со статусом 404). Обычный `python3 -m http.server` не подойдёт: он не понимает адреса без `.html`.
 
 ## Что где менять
 
