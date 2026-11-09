@@ -225,13 +225,25 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .form__error { color: #b03a28; font-size: 14px; font-weight: 600; }
 
 /* footer */
-.footer { background: var(--bg); padding: 44px 0 40px; border-top: 1px solid var(--line); }
-.footer__in { display: grid; justify-items: center; gap: 10px; text-align: center; }
-.footer__addr { color: var(--ink-2); }
-.footer__note { font-size: 13px; color: var(--ink-2); max-width: 520px; }
+.footer { background: var(--bg); padding: 64px 0 36px; border-top: 1px solid var(--line); }
+.footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.1fr; gap: 48px; }
+.footer__brand { display: grid; gap: 10px; align-content: start; justify-items: start; }
+.footer__brand p { margin: 0; }
+.footer__addr { color: var(--ink); font-weight: 600; margin-top: 8px !important; }
+.footer__phone { font-weight: 700; text-decoration: none; }
+.footer__hours { color: var(--ink-2); font-size: 14px; }
+.footer__col h3 { font: 700 12px/1 var(--font-body); letter-spacing: .18em; text-transform: uppercase; color: var(--gold-1); margin-bottom: 20px; }
+.footer__col ul { display: grid; gap: 12px; }
+.footer__col a { text-decoration: none; color: var(--ink-2); font-size: 15px; word-break: break-word; transition: color .2s; }
+.footer__col a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold-2); text-underline-offset: 4px; }
+.footer__bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 28px; }
+.footer__bottom p { margin: 0; }
+.footer__note { font-size: 13px; color: var(--ink-2); flex: 1 1 100%; }
 .footer__copy, .footer__made { font-size: 13px; color: var(--ink-2); }
 .footer__made a { color: var(--gold-1); font-weight: 700; text-decoration: none; }
 .footer__made a:hover { text-decoration: underline; }
+@media (max-width: 920px) { .footer__grid { grid-template-columns: 1fr 1fr; gap: 40px 28px; } .footer__brand { grid-column: 1 / -1; } }
+@media (max-width: 480px) { .footer { padding-top: 48px; } .footer__grid { grid-template-columns: 1fr 1fr; } .footer__col:last-child { grid-column: 1 / -1; } }
 
 /* floating whatsapp */
 .fab { position: fixed; right: 18px; bottom: 18px; z-index: 40; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 14px 30px -8px rgba(18, 140, 70, .7); transition: transform .2s; }

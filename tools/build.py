@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Генератор страниц услуг Dinastiya Stom Clinic.
 
+Также обновляет подвал на главной между маркерами <!-- footer:start --> и <!-- footer:end -->.
+
 Запуск из корня репозитория:  python3 tools/build.py
 Создаёт implantation.html, orthodontics.html, therapy.html, orthopedics.html, kids.html,
 а также sitemap.xml и robots.txt. Главная страница (index.html) пишется вручную.
@@ -67,19 +69,56 @@ def header():
 </header>'''
 
 
-def footer():
+GIS = "https://2gis.kz/astana/search/Dinastiya%20Stom%20Clinic"
+EMAIL = "dinastiyastomclinic@mail.ru"
+
+
+def footer_html(on_index=False):
+    """Подвал. На главной ссылки-якоря короткие (#prices), на остальных страницах ведут на index.html#..."""
+    pre = "" if on_index else "index.html"
+    home = "#top" if on_index else "index.html"
+    svc = "".join(f'<li><a href="{h}">{escape(title)}</a></li>' for h, title, _ in SERVICES)
+    clinic = "".join(f'<li><a href="{pre}#{a}">{escape(label)}</a></li>' for a, label in [
+        ("prices", "Цены"), ("installment", "Рассрочка"), ("team", "Команда"),
+        ("reviews", "Отзывы"), ("faq", "Частые вопросы"), ("contacts", "Контакты")])
     return f'''<footer class="footer">
-  <div class="wrap footer__in">
-    <a class="logo" href="index.html" aria-label="На главную"><img src="img/logo.webp" alt="Dinastiya Stom Clinic" width="97" height="61" loading="lazy"></a>
-    <p class="footer__addr">Астана, проспект Туран, 34Б · <a href="tel:{PHONE_RAW}">{PHONE}</a></p>
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <a class="logo" href="{home}" aria-label="Dinastiya Stom Clinic — наверх"><img src="img/logo.webp" alt="Dinastiya Stom Clinic" width="97" height="61" loading="lazy"></a>
+      <p class="footer__addr">Астана, проспект Туран, 34Б</p>
+      <p><a class="footer__phone" href="tel:{PHONE_RAW}">{PHONE}</a></p>
+      <p class="footer__hours">Приём с 09:00, запись через WhatsApp</p>
+    </div>
+    <nav class="footer__col" aria-label="Услуги">
+      <h3>Услуги</h3>
+      <ul>{svc}</ul>
+    </nav>
+    <nav class="footer__col" aria-label="Клиника">
+      <h3>Клиника</h3>
+      <ul>{clinic}</ul>
+    </nav>
+    <div class="footer__col">
+      <h3>Связаться</h3>
+      <ul>
+        <li><a href="{wa('Здравствуйте!')}" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://t.me/dinastiyastomclinic" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href="https://www.instagram.com/dinastiyastomclinic/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="{GIS}" target="_blank" rel="noopener">2ГИС</a></li>
+        <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
     <p class="footer__note">Имеются противопоказания. Необходима консультация специалиста.</p>
     <p class="footer__copy">© 2026 Dinastiya Stom Clinic</p>
     <p class="footer__made">Создано <a href="https://t.me/bauyrzhanov_12_" target="_blank" rel="noopener">@bauyrzhanov_12_</a></p>
   </div>
-</footer>
+</footer>'''
 
-<a class="fab" data-wa="Здравствуйте! Хочу записаться на приём." href="{wa('Здравствуйте! Хочу записаться на приём.')}" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.300c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
+
+def fab():
+    return f'''<a class="fab" data-wa="Здравствуйте! Хочу записаться на приём." href="{wa('Здравствуйте! Хочу записаться на приём.')}" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
 </a>'''
 
 
@@ -268,7 +307,9 @@ def page(p):
   {cta(p['cta_title'], p['cta_text'], p['wa'])}
 </main>
 
-{footer()}
+{footer_html()}
+
+{fab()}
 
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
@@ -540,6 +581,13 @@ def write(name, content):
 def main():
     for p in PAGES:
         write(p["slug"], page(p))
+    idx_path = os.path.join(ROOT, "index.html")
+    with open(idx_path, encoding="utf-8") as f:
+        idx = f.read()
+    a, b = idx.index("<!-- footer:start -->"), idx.index("<!-- footer:end -->")
+    idx = idx[:a] + "<!-- footer:start -->\n" + footer_html(on_index=True) + "\n" + idx[b:]
+    with open(idx_path, "w", encoding="utf-8") as f:
+        f.write(idx)
     urls = [""] + [p["slug"] for p in PAGES]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for u in urls:
