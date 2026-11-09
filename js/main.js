@@ -26,10 +26,15 @@
       img.width = 340;
       img.height = 400;
       fig.appendChild(img);
-      if (p.name || p.role) {
+      var frame = document.createElement("div");
+      frame.className = "person__photo";
+      frame.appendChild(img);
+      fig.appendChild(frame);
+      if (p.name || p.role || p.about) {
         var cap = document.createElement("figcaption");
         if (p.name) { var b = document.createElement("b"); b.textContent = p.name; cap.appendChild(b); }
         if (p.role) { var s = document.createElement("span"); s.textContent = p.role; cap.appendChild(s); }
+        if (p.about) { var a = document.createElement("p"); a.textContent = p.about; cap.appendChild(a); }
         fig.appendChild(cap);
       }
       list.appendChild(fig);
