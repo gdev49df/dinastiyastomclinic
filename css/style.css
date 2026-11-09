@@ -176,6 +176,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .reviews__text h2 { font-size: clamp(30px, 3.4vw, 42px); }
 .reviews__text p { margin: 12px 0 24px; color: var(--ink-2); max-width: 460px; }
 
+.reviews-list { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.reviews-list[hidden] { display: none; }
+.review { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px; }
+.review__text { color: var(--ink); font-size: 15.5px; flex: 1; }
+.review__who { display: flex; flex-direction: column; padding-top: 14px; border-top: 1px solid var(--line); }
+.review__who span { font-size: 13px; color: var(--ink-2); }
+@media (max-width: 920px) {
+  .reviews-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; padding-bottom: 12px; margin-inline: -16px; padding-inline: 16px; }
+  .review { flex: 0 0 82%; scroll-snap-align: start; }
+}
+
 /* faq */
 .faq { display: grid; gap: 12px; }
 .faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 0 24px; transition: border-color .2s; }

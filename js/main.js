@@ -36,6 +36,35 @@
     });
   }
 
+  /* отзывы */
+  var rv = document.getElementById("reviews-list");
+  if (rv && C.reviews && C.reviews.length) {
+    C.reviews.forEach(function (r) {
+      var card = document.createElement("article");
+      card.className = "review";
+      var stars = document.createElement("div");
+      stars.className = "stars";
+      stars.setAttribute("aria-label", "Оценка " + (r.rating || 5) + " из 5");
+      stars.textContent = new Array((r.rating || 5) + 1).join("★");
+      var q = document.createElement("p");
+      q.className = "review__text";
+      q.textContent = r.text;
+      var who = document.createElement("div");
+      who.className = "review__who";
+      var n = document.createElement("b");
+      n.textContent = r.name || "Пациент";
+      who.appendChild(n);
+      var meta = document.createElement("span");
+      meta.textContent = "2ГИС" + (r.date ? " · " + r.date : "");
+      who.appendChild(meta);
+      card.appendChild(stars);
+      card.appendChild(q);
+      card.appendChild(who);
+      rv.appendChild(card);
+    });
+    rv.hidden = false;
+  }
+
   /* меню */
   var burger = document.getElementById("burger");
   var nav = document.getElementById("nav");
