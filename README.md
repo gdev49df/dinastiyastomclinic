@@ -23,13 +23,20 @@ python3 tools/build.py
 
 и закоммитить получившиеся `.html`, `sitemap.xml` и `robots.txt`.
 
+## Адреса страниц
+
+Страницы открываются без `.html`: `/implantation`, `/orthodontics`, `/therapy`, `/orthopedics`, `/kids`.
+Файлы на диске по-прежнему `*.html`, github pages сам отдаёт их по короткому адресу. Ссылки на сайте,
+canonical и sitemap используют короткие адреса. Пути к css, js и картинкам корневые (`/css/style.css`),
+поэтому сайт должен лежать в корне домена.
+
 ## Запуск локально
 
 ```
-python3 -m http.server 8000
+python3 tools/serve.py
 ```
 
-Открыть http://localhost:8000
+Открыть http://localhost:8000. Обычный `python3 -m http.server` не подойдёт: он не понимает адреса без `.html`.
 
 ## Что где менять
 

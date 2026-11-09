@@ -30,11 +30,11 @@ DOCTORS = {
 }
 
 SERVICES = [
-    ("implantation.html", "Имплантация зубов", "Импланты премиум-класса, All-on-4 / All-on-6, гарантия 10 лет."),
-    ("orthodontics.html", "Брекеты", "Исправление прикуса и выравнивание зубов для взрослых и детей."),
-    ("therapy.html", "Лечение зубов", "Кариес, эндодонтия, вкладки и накладки, лечение под микроскопом."),
-    ("orthopedics.html", "Ортопедия", "Коронки, виниры и восстановление зубного ряда."),
-    ("kids.html", "Детская стоматология", "Детский терапевт, ортодонт и хирург. Бережный приём."),
+    ("/implantation", "Имплантация зубов", "Импланты премиум-класса, All-on-4 / All-on-6, гарантия 10 лет."),
+    ("/orthodontics", "Брекеты", "Исправление прикуса и выравнивание зубов для взрослых и детей."),
+    ("/therapy", "Лечение зубов", "Кариес, эндодонтия, вкладки и накладки, лечение под микроскопом."),
+    ("/orthopedics", "Ортопедия", "Коронки, виниры и восстановление зубного ряда."),
+    ("/kids", "Детская стоматология", "Детский терапевт, ортодонт и хирург. Бережный приём."),
 ]
 
 
@@ -49,16 +49,16 @@ def btn_wa(text, label, cls="btn--gold"):
 def header():
     return f'''<header class="header" id="top">
   <div class="wrap header__in">
-    <a class="logo" href="index.html" aria-label="Dinastiya Stom Clinic — на главную">
-      <img src="img/logo.webp" alt="Dinastiya Stom Clinic" width="121" height="76">
+    <a class="logo" href="/" aria-label="Dinastiya Stom Clinic — на главную">
+      <img src="/img/logo.webp" alt="Dinastiya Stom Clinic" width="121" height="76">
     </a>
     <nav class="nav" id="nav" aria-label="Основное меню">
-      <a href="index.html#services">Услуги</a>
-      <a href="index.html#prices">Цены</a>
-      <a href="index.html#implants">Имплантация</a>
-      <a href="index.html#installment">Рассрочка</a>
-      <a href="index.html#team">Команда</a>
-      <a href="index.html#contacts">Контакты</a>
+      <a href="/#services">Услуги</a>
+      <a href="/#prices">Цены</a>
+      <a href="/#implants">Имплантация</a>
+      <a href="/#installment">Рассрочка</a>
+      <a href="/#team">Команда</a>
+      <a href="/#contacts">Контакты</a>
     </nav>
     <div class="header__actions">
       <a class="header__phone" href="tel:{PHONE_RAW}">{PHONE}</a>
@@ -74,9 +74,9 @@ EMAIL = "dinastiyastomclinic@mail.ru"
 
 
 def footer_html(on_index=False):
-    """Подвал. На главной ссылки-якоря короткие (#prices), на остальных страницах ведут на index.html#..."""
-    pre = "" if on_index else "index.html"
-    home = "#top" if on_index else "index.html"
+    """Подвал. На главной ссылки-якоря короткие (#prices), на остальных страницах ведут на /#..."""
+    pre = "" if on_index else "/"
+    home = "#top" if on_index else "/"
     svc = "".join(f'<li><a href="{h}">{escape(title)}</a></li>' for h, title, _ in SERVICES)
     clinic = "".join(f'<li><a href="{pre}#{a}">{escape(label)}</a></li>' for a, label in [
         ("prices", "Цены"), ("installment", "Рассрочка"), ("team", "Команда"),
@@ -84,7 +84,7 @@ def footer_html(on_index=False):
     return f'''<footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__brand">
-      <a class="logo" href="{home}" aria-label="Dinastiya Stom Clinic — наверх"><img src="img/logo.webp" alt="Dinastiya Stom Clinic" width="97" height="61" loading="lazy"></a>
+      <a class="logo" href="{home}" aria-label="Dinastiya Stom Clinic — наверх"><img src="/img/logo.webp" alt="Dinastiya Stom Clinic" width="97" height="61" loading="lazy"></a>
       <p class="footer__addr">Астана, проспект Туран, 34Б</p>
       <p><a class="footer__phone" href="tel:{PHONE_RAW}">{PHONE}</a></p>
       <p class="footer__hours">Приём с 09:00, запись через WhatsApp</p>
@@ -125,15 +125,15 @@ def fab():
 def doctor_card(key):
     d = DOCTORS[key]
     return f'''<figure class="person reveal" style="margin:0">
-          <div class="person__photo"><img src="{d['photo']}" alt="{escape(d['name'])}" width="340" height="400" loading="lazy"></div>
+          <div class="person__photo"><img src="/{d['photo']}" alt="{escape(d['name'])}" width="340" height="400" loading="lazy"></div>
           <figcaption><b>{escape(d['name'])}</b><span>{escape(d['role'])}</span><p>{escape(d['about'])}</p></figcaption>
         </figure>'''
 
 
 def hero_media(kind, img, alt):
     if kind == "arch":
-        return f'<div class="arch"><img src="{img}" alt="{escape(alt)}" width="724" height="797" fetchpriority="high"></div>'
-    return f'<div class="photo-frame"><img src="{img}" alt="{escape(alt)}" width="760" height="900" fetchpriority="high"></div>'
+        return f'<div class="arch"><img src="/{img}" alt="{escape(alt)}" width="724" height="797" fetchpriority="high"></div>'
+    return f'<div class="photo-frame"><img src="/{img}" alt="{escape(alt)}" width="760" height="900" fetchpriority="high"></div>'
 
 
 def facts(items):
@@ -180,7 +180,7 @@ def price_strip(rows, note=None):
         <ul class="price-list">{lis}</ul>
       </div>
       {n}
-      <div class="center reveal" style="margin-top:28px"><a class="btn btn--ghost" href="index.html#prices">Все цены</a></div>
+      <div class="center reveal" style="margin-top:28px"><a class="btn btn--ghost" href="/#prices">Все цены</a></div>
     </div>
   </section>'''
 
@@ -225,7 +225,7 @@ def cta(title, text, wa_text):
 
 def page(p):
     slug = p["slug"]
-    url = f"{SITE}/{slug}"
+    url = f"{SITE}/{slug[:-5]}"
     ld = f'''<script type="application/ld+json">
   {{
     "@context": "https://schema.org",
@@ -257,7 +257,7 @@ def page(p):
   <meta name="description" content="{escape(p['description'])}">
   <meta name="theme-color" content="#fbf9f4">
   <link rel="canonical" href="{url}">
-  <link rel="icon" href="img/logo.webp" type="image/webp">
+  <link rel="icon" href="/img/logo.webp" type="image/webp">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{escape(p['title'])}">
   <meta property="og:description" content="{escape(p['description'])}">
@@ -267,7 +267,7 @@ def page(p):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   {ld}
 </head>
 <body>
@@ -278,7 +278,7 @@ def page(p):
   <section class="page-hero">
     <div class="wrap page-hero__in">
       <div class="reveal">
-        <nav class="crumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span>/</span><a href="index.html#services">Услуги</a><span>/</span>{escape(p['crumb'])}</nav>
+        <nav class="crumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span>/</span><a href="/#services">Услуги</a><span>/</span>{escape(p['crumb'])}</nav>
         <p class="eyebrow">{escape(p['eyebrow'])}</p>
         <h1>{p['h1']}</h1>
         <p class="lead">{escape(p['lead'])}</p>
@@ -302,7 +302,7 @@ def page(p):
 
   {faq(p['faq'])}
 
-  {other_services(slug)}
+  {other_services("/" + slug[:-5])}
 
   {cta(p['cta_title'], p['cta_text'], p['wa'])}
 </main>
@@ -311,8 +311,8 @@ def page(p):
 
 {fab()}
 
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
+<script src="/js/data.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
 '''
@@ -322,7 +322,7 @@ def split_block(eyebrow, title, text, items, side_img=None, side_alt="", id_=Non
     idattr = f' id="{id_}"' if id_ else ""
     cls = "section section--ivory" if ivory else "section"
     if side_img:
-        media = f'<div class="split__media reveal"><div class="photo-frame"><img src="{side_img}" alt="{escape(side_alt)}" width="760" height="900" loading="lazy"></div></div>'
+        media = f'<div class="split__media reveal"><div class="photo-frame"><img src="/{side_img}" alt="{escape(side_alt)}" width="760" height="900" loading="lazy"></div></div>'
         return f'''<section class="{cls}"{idattr}>
     <div class="wrap split">
       {media}
@@ -588,7 +588,7 @@ def main():
     idx = idx[:a] + "<!-- footer:start -->\n" + footer_html(on_index=True) + "\n" + idx[b:]
     with open(idx_path, "w", encoding="utf-8") as f:
         f.write(idx)
-    urls = [""] + [p["slug"] for p in PAGES]
+    urls = [""] + [p["slug"][:-5] for p in PAGES]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for u in urls:
         sm += f"  <url><loc>{SITE}/{u}</loc></url>\n"
