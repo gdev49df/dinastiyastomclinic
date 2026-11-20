@@ -437,3 +437,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .page-hero__media:has(.duo-photos) { max-width: 520px; }
 
 #ortho .duo { align-items: center; }
+.brands--5 { grid-template-columns: repeat(5, 1fr); }
+.brands--5 .brand b { font-size: 26px; }
+@media (max-width: 1080px) { .brands--5 { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 620px) { .brands--5 { grid-template-columns: 1fr 1fr; } }

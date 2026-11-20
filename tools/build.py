@@ -418,16 +418,18 @@ def split_block(eyebrow, title, text, items, side_img=None, side_alt="", id_=Non
   </section>'''
 
 
-def brands_block(eyebrow, title, sub, items):
+def brands_block(eyebrow, title, sub, items, id_="brands", ivory=False, cols=4):
     cards = "".join(f'<li class="brand reveal"><b>{escape(n)}</b><span>{escape(c)}</span></li>' for n, c in items)
-    return f'''<section class="section" id="brands">
+    cls = "section section--ivory" if ivory else "section"
+    subh = f'<p class="section__sub">{escape(sub)}</p>' if sub else ""
+    return f'''<section class="{cls}" id="{id_}">
     <div class="wrap">
       <header class="section__head reveal">
         <p class="eyebrow">{escape(eyebrow)}</p>
         <h2>{escape(title)}</h2>
-        <p class="section__sub">{escape(sub)}</p>
+        {subh}
       </header>
-      <ul class="brands">{cards}</ul>
+      <ul class="brands brands--{cols}">{cards}</ul>
     </div>
   </section>'''
 
@@ -530,9 +532,13 @@ PAGES.append(dict(
                      "Лечение зубов под микроскопом взрослым и детям",
                      "Прицельный снимок зуба",
                      "Неотложная помощь для взрослых"], id_="what")
-        + split_block("Что входит", "Ортодонтия",
-                      None,
-                      ["Брекеты", "Элайнеры", "Пластинки", "Капы", "Ретейнеры"], id_="ortho", ivory=True)
+        + brands_block("Что входит", "Ортодонтия", "Исправляем прикус и выравниваем зубы.",
+                       [("Брекеты", "Исправляют прикус и выравнивают зубы"),
+                        ("Элайнеры", "Прозрачные капы для выравнивания"),
+                        ("Пластинки", "Съёмные ортодонтические аппараты"),
+                        ("Капы", "Защита зубов и контроль положения"),
+                        ("Ретейнеры", "Удерживают результат после лечения")],
+                       id_="ortho", ivory=True, cols=5)
         + steps_block("Этапы", "Как проходит приём", [
             ("Осмотр", "Консультация врача и осмотр. Стоит 5 000 ₸."),
             ("Диагностика", "При необходимости делаем прицельный снимок зуба."),
