@@ -441,3 +441,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .brands--5 .brand b { font-size: 26px; }
 @media (max-width: 1080px) { .brands--5 { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 620px) { .brands--5 { grid-template-columns: 1fr 1fr; } }
+
+/* врач: компактнее по высоте */
+#doctors:has(.docsplit) { padding: 56px 0; }
+#doctors:has(.docsplit) .section__head { margin-bottom: 8px; }
+.docsplit__photo { max-width: 320px; aspect-ratio: 1 / 1; margin-inline: auto 0; }
+.docsplit__photo img { object-position: top; }
+@media (max-width: 920px) { .docsplit__photo { max-width: 280px; margin-inline: auto; } }
