@@ -448,3 +448,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .docsplit { align-items: start; }
 .docsplit__text { padding-top: 36px; }
 @media (max-width: 920px) { .docsplit__text { padding-top: 0; } }
+
+@media (max-width: 620px) {
+  .team .person figcaption p { display: none; }
+  .team .person figcaption b { font-size: 19px; }
+}
