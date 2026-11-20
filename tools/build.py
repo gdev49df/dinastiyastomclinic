@@ -214,9 +214,9 @@ def steps(items):
     return f'<ol class="steps">{out}</ol>'
 
 
-def faq(items):
+def faq(items, ivory=False):
     body = "".join(f"<details><summary>{escape(q)}</summary><p>{escape(a)}</p></details>" for q, a in items)
-    return f'''<section class="section" id="faq">
+    return f'''<section class="section{' section--ivory' if ivory else ''}" id="faq">
     <div class="wrap wrap--narrow">
       <header class="section__head reveal">
         <p class="eyebrow">Вопросы</p>
@@ -246,7 +246,7 @@ def price_strip(rows, note=None):
   </section>'''
 
 
-def other_services(current):
+def other_services(current, ivory=False):
     cards = ""
     for href, title, text in SERVICES:
         if href.split("#")[0] == current:
@@ -256,7 +256,7 @@ def other_services(current):
           <p>{escape(text)}</p>
           <a class="card__link" href="{href}">Подробнее</a>
         </article>'''
-    return f'''<section class="section" id="other">
+    return f'''<section class="section{' section--ivory' if ivory else ''}" id="other">
     <div class="wrap">
       <header class="section__head reveal">
         <p class="eyebrow">Другие услуги</p>
@@ -367,9 +367,9 @@ def page(p):
 
   {prices}
 
-  {faq(p['faq'])}
+  {faq(p['faq'], ivory=not p.get('prices'))}
 
-  {other_services("/" + slug[:-5])}
+  {other_services("/" + slug[:-5], ivory=bool(p.get('prices')))}
 
   {cta(p['cta_title'], p['cta_text'], p['wa'])}
 </main>
