@@ -160,7 +160,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .steps p { color: var(--ink-2); font-size: 15px; }
 
 /* team */
-.team { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.team > .person:last-child:nth-child(3n+1) { grid-column: 2; }
 .person { display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden; background: var(--surface); border: 1px solid var(--line); transition: transform .25s, box-shadow .25s, border-color .25s; }
 .person:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--gold-2); }
 .person__photo { aspect-ratio: 3 / 3.6; background: linear-gradient(180deg, #fff, var(--ivory)); overflow: hidden; }
@@ -380,3 +381,57 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .section__head { margin-bottom: 36px; }
   .reviews__score b { font-size: 76px; }
 }
+
+
+/* заглушка вместо фото врача */
+.ph { width: 100%; height: 100%; display: grid; place-items: center; background: radial-gradient(circle at 50% 35%, #fff 0, var(--ivory) 70%); }
+.ph span { width: 38%; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: var(--gold-grad); color: #fff; font: 600 clamp(28px, 4vw, 44px)/1 var(--font-head); letter-spacing: .04em; }
+
+/* переключатель языка */
+.lang { position: relative; }
+.lang__btn { display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font: 700 13px/1 var(--font-body); letter-spacing: .06em; color: var(--ink); cursor: pointer; transition: border-color .2s; }
+.lang__btn:hover, .lang__btn[aria-expanded="true"] { border-color: var(--gold-2); }
+.lang__btn svg { width: 10px; height: 7px; fill: none; stroke: var(--gold-1); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+.lang__btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.lang__menu { position: absolute; right: 0; top: calc(100% + 8px); min-width: 150px; padding: 6px; margin: 0; list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); z-index: 60; }
+.lang__menu[hidden] { display: none; }
+.lang__menu button { width: 100%; text-align: left; padding: 10px 12px; border: 0; border-radius: 9px; background: none; font: 600 14.5px/1 var(--font-body); color: var(--ink); cursor: pointer; }
+.lang__menu button:hover { background: var(--ivory); }
+.lang__menu button[aria-current="true"] { color: var(--gold-1); }
+@media (max-width: 620px) { .header__actions { gap: 10px; } }
+
+/* системы имплантов */
+.brands { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 0; padding: 0; list-style: none; }
+.brand { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 22px; text-align: center; transition: transform .25s, box-shadow .25s, border-color .25s; }
+.brand:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--gold-2); }
+.brand b { display: block; font: 600 32px/1.1 var(--font-head); background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: 4px; }
+.brand span { font-size: 14px; color: var(--ink-2); font-weight: 600; }
+@media (max-width: 920px) { .brands { grid-template-columns: 1fr 1fr; } }
+
+/* врач: текст слева, фото справа */
+.docsplit { display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: center; }
+.docsplit + .docsplit { margin-top: 56px; }
+.docsplit__text h3 { font: 600 clamp(28px, 3.2vw, 40px)/1.15 var(--font-head); margin-bottom: 10px; }
+.docsplit__text span { display: block; font-weight: 700; font-size: 14px; color: var(--gold-1); margin-bottom: 16px; line-height: 1.4; }
+.docsplit__text p { color: var(--ink-2); max-width: 52ch; }
+.docsplit__photo { max-width: 400px; width: 100%; margin-inline: auto; border-radius: 28px; overflow: hidden; border: 1.5px solid var(--gold-2); box-shadow: var(--shadow); aspect-ratio: 4 / 4.6; background: linear-gradient(180deg, #fff, var(--ivory)); }
+.docsplit__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+@media (max-width: 920px) { .docsplit { grid-template-columns: 1fr; gap: 28px; } .docsplit__photo { order: -1; max-width: 320px; } }
+
+/* два врача: широкие карточки */
+.docwide-list { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.docwide { display: grid; grid-template-columns: .9fr 1.1fr; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.docwide__photo { background: linear-gradient(180deg, #fff, var(--ivory)); min-height: 280px; }
+.docwide__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.docwide__text { padding: 28px 26px; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.docwide__text b { font: 600 clamp(24px, 2.4vw, 30px)/1.15 var(--font-head); }
+.docwide__text span { font-size: 13px; font-weight: 700; color: var(--gold-1); line-height: 1.4; }
+.docwide__text p { color: var(--ink-2); font-size: 15px; margin-top: 4px; }
+@media (max-width: 1080px) { .docwide-list { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .docwide { grid-template-columns: 1fr; } .docwide__photo { aspect-ratio: 4 / 4; min-height: 0; } }
+
+/* две фотографии в шапке страницы */
+.duo-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.duo-photos .photo-frame { aspect-ratio: 3 / 4.4; border-radius: 22px; }
+.duo-photos .photo-frame img { object-position: top; }
+.page-hero__media:has(.duo-photos) { max-width: 520px; }

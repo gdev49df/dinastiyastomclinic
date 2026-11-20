@@ -19,16 +19,26 @@
       var fig = document.createElement("figure");
       fig.className = "person reveal";
       fig.style.margin = "0";
-      var img = document.createElement("img");
-      img.src = p.photo;
-      img.alt = p.name || "Врач клиники Dinastiya Stom Clinic";
-      img.loading = "lazy";
-      img.width = 340;
-      img.height = 400;
-      fig.appendChild(img);
       var frame = document.createElement("div");
       frame.className = "person__photo";
-      frame.appendChild(img);
+      if (p.photo) {
+        var img = document.createElement("img");
+        img.src = p.photo;
+        img.alt = p.name || "Врач клиники Dinastiya Stom Clinic";
+        img.loading = "lazy";
+        img.width = 340;
+        img.height = 400;
+        frame.appendChild(img);
+      } else {
+        var ph = document.createElement("div");
+        ph.className = "ph";
+        ph.setAttribute("role", "img");
+        ph.setAttribute("aria-label", p.name || "");
+        var ini = document.createElement("span");
+        ini.textContent = (p.name || "").split(/\s+/).filter(function (w) { return /^\p{L}/u.test(w); }).slice(0, 2).map(function (w) { return w[0]; }).join("").toUpperCase();
+        ph.appendChild(ini);
+        frame.appendChild(ph);
+      }
       fig.appendChild(frame);
       if (p.name || p.role || p.about) {
         var cap = document.createElement("figcaption");
@@ -158,7 +168,7 @@
   var form = document.getElementById("form");
   var err = document.getElementById("form-error");
   function showError(msg, field) {
-    err.textContent = msg; err.hidden = false;
+    err.textContent = window.i18nT ? window.i18nT(msg) : msg; err.hidden = false;
     if (field) { field.classList.add("is-bad"); field.focus(); }
   }
   if (form) {
