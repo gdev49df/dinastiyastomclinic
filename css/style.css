@@ -435,3 +435,5 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .duo-photos .photo-frame { aspect-ratio: 3 / 4.4; border-radius: 22px; }
 .duo-photos .photo-frame img { object-position: top; }
 .page-hero__media:has(.duo-photos) { max-width: 520px; }
+
+#ortho .duo { align-items: center; }
