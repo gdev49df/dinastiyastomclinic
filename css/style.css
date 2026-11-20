@@ -448,3 +448,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .docsplit__photo { max-width: 320px; aspect-ratio: 1 / 1; margin-inline: auto 0; }
 .docsplit__photo img { object-position: top; }
 @media (max-width: 920px) { .docsplit__photo { max-width: 280px; margin-inline: auto; } }
+
+/* фото крупнее */
+.docsplit { grid-template-columns: 1fr 1fr; }
+.docsplit__photo { max-width: 500px; aspect-ratio: 1 / .92; margin-inline: auto 0; }
+.docwide { grid-template-columns: 1.1fr .9fr; }
+.docwide__photo { min-height: 360px; }
+.page-hero__media { max-width: 520px; }
+.page-hero__media:has(.duo-photos) { max-width: 600px; }
+@media (max-width: 920px) { .docsplit__photo { max-width: 100%; margin-inline: auto; } }
