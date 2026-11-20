@@ -453,25 +453,3 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .team .person figcaption p { display: none; }
   .team .person figcaption b { font-size: 19px; }
 }
-
-/* ===== светлая тема: бывшие тёмные блоки ===== */
-:root { --dark: #f7edcf; }
-.section--dark { background: linear-gradient(135deg, #f7edcf 0%, #fbf5e2 100%); color: var(--ink); }
-.section--dark .section__sub { color: var(--ink-2); }
-.section--dark .eyebrow { color: var(--gold-1); }
-.stat { background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
-.stat span { color: var(--ink-2); }
-.contacts__list li { border-bottom-color: var(--line); }
-.contacts__list span { color: var(--ink-2); }
-.contacts__list a:hover { color: var(--gold-1); }
-.socials a { border-color: var(--gold-2); color: var(--ink); }
-.form { box-shadow: var(--shadow); border: 1px solid var(--line); }
-.cta__phone { color: var(--ink); border-color: var(--gold-2); }
-.cta__addr { color: var(--ink-2); }
-.pay { background: var(--surface); color: var(--ink); border: 1px solid var(--line); box-shadow: var(--shadow); }
-.pay .chips li { border-color: var(--gold-2); color: var(--ink); }
-.pay .chips li:hover { background: var(--ivory); }
-.pay p { color: var(--ink-2); }
-.float-note { background: var(--surface); color: var(--ink); border: 1px solid var(--gold-2); }
-.float-note b { color: var(--gold-1); }
-.float-note span { color: var(--ink-2); }
