@@ -187,3 +187,17 @@
     });
   }
 })();
+
+/* клик по логотипу на главной: плавно наверх */
+(function () {
+  document.querySelectorAll("a.logo").forEach(function (a) {
+    var h = a.getAttribute("href");
+    if (h === "#top" || (h === "/" && location.pathname === "/")) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+      });
+    }
+  });
+})();
