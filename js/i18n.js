@@ -694,9 +694,9 @@ window.I18N = {
   "Біз тексерілген импланттар жүйесін қоямыз және нәтижеге жауап береміз: имплантацияға 10 жыл кепілдік бар. Әр кезеңді алдын ала жоспарлаймыз, сондықтан нәтиже болжамды, ал баға операцияға дейін белгілі.",
   "We use proven implant systems and stand behind the result: implants come with a 10-year warranty. Every stage is planned in advance, so the outcome is predictable and the price is known before surgery."
  ],
- "Мы устанавливаем импланты SIN (Бразилия), Straumann (Швейцария), Osstem (Корея) и Neodent (Бразилия). Поставка прямая, от производителей, имплантаты сертифицированы.": [
-  "Біз SIN (Бразилия), Straumann (Швейцария), Osstem (Корея) және Neodent (Бразилия) импланттарын қоямыз. Жеткізу тікелей, өндірушілерден, импланттар сертификатталған.",
-  "We place SIN (Brazil), Straumann (Switzerland), Osstem (Korea) and Neodent (Brazil) implants. They are supplied directly by the manufacturers and are certified."
+ "Мы устанавливаем импланты SIN (Бразилия), Straumann (Швейцария), Osstem (Корея) и Neodent (Швейцария). Поставка прямая, от производителей, имплантаты сертифицированы.": [
+  "Біз SIN (Бразилия), Straumann (Швейцария), Osstem (Корея) және Neodent (Швейцария) импланттарын қоямыз. Жеткізу тікелей, өндірушілерден, импланттар сертификатталған.",
+  "We place SIN (Brazil), Straumann (Switzerland), Osstem (Korea) and Neodent (Switzerland) implants. They are supplied directly by the manufacturers and are certified."
  ],
  "На главную": [
   "Басты бетке",
