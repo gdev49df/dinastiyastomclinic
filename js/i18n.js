@@ -958,6 +958,8 @@ window.I18N = {
   "Тексеруден кейін дәрігер тұрақты бағасы бар емдеу жоспарын жасайды. Хирург кеңесі 5 000 ₸ тұрады.",
   "After the examination the doctor draws up a treatment plan at a fixed price. A surgeon consultation costs 5,000 ₸."
  ],
+ "Почему выбирают": ["Неге", "Why patients choose"],
+ "Dinastiya StomClinic": ["Dinastiya StomClinic таңдайды", "Dinastiya StomClinic"],
  "Почему выбирают Dinastiya StomClinic": [
   "Неге Dinastiya StomClinic таңдайды",
   "Why patients choose Dinastiya StomClinic"
