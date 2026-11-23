@@ -1,6 +1,6 @@
 /* данные клиники — всё, что нужно менять, лежит здесь */
 window.CLINIC = {
-  name: "Dinastiya Stom Clinic",
+  name: "Dinastiya StomClinic",
   phone: "+7 776 773 24 21",
   phoneRaw: "+77767732421",
   whatsapp: "77767732421",

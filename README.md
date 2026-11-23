@@ -1,6 +1,6 @@
-# Dinastiya Stom Clinic
+# Dinastiya StomClinic
 
-Сайт стоматологии Dinastiya Stom Clinic (Астана, пр. Туран 34Б). Чистые HTML, CSS и JS, на сервере сборка не нужна.
+Сайт стоматологии Dinastiya StomClinic (Астана, пр. Туран 34Б). Чистые HTML, CSS и JS, на сервере сборка не нужна.
 
 ## Структура
 

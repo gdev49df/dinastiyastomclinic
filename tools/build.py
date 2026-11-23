@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Генератор страниц услуг Dinastiya Stom Clinic.
+"""Генератор страниц услуг Dinastiya StomClinic.
 
 Также обновляет подвал на главной между маркерами <!-- footer:start --> и <!-- footer:end -->.
 
@@ -54,8 +54,8 @@ def btn_wa(text, label, cls="btn--gold"):
 def header():
     return f'''<header class="header" id="top">
   <div class="wrap header__in">
-    <a class="logo" href="/" aria-label="Dinastiya Stom Clinic — на главную">
-      <img src="/img/logo.webp" alt="Dinastiya Stom Clinic" width="121" height="76">
+    <a class="logo" href="/" aria-label="Dinastiya StomClinic — на главную">
+      <img src="/img/logo.webp" alt="Dinastiya StomClinic" width="121" height="76">
     </a>
     <nav class="nav" id="nav" aria-label="Основное меню">
       <a href="/#services">Услуги</a>
@@ -97,7 +97,7 @@ def footer_html(on_index=False):
     return f'''<footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__brand">
-      <a class="logo" href="{home}" aria-label="Dinastiya Stom Clinic — наверх"><img src="/img/logo.webp" alt="Dinastiya Stom Clinic" width="97" height="61" loading="lazy"></a>
+      <a class="logo" href="{home}" aria-label="Dinastiya StomClinic — наверх"><img src="/img/logo.webp" alt="Dinastiya StomClinic" width="97" height="61" loading="lazy"></a>
       <p class="footer__addr">Астана, проспект Туран, 34Б</p>
       <p><a class="footer__phone" href="tel:{PHONE_RAW}">{PHONE}</a></p>
       <p class="footer__hours">{HOURS}</p>
@@ -122,7 +122,7 @@ def footer_html(on_index=False):
   </div>
   <div class="wrap footer__bottom">
     <p class="footer__note">Имеются противопоказания. Необходима консультация специалиста.</p>
-    <p class="footer__copy">© 2024–2026 Dinastiya Stom Clinic. Все права защищены.</p>
+    <p class="footer__copy">© 2024–2026 Dinastiya StomClinic. Все права защищены.</p>
   </div>
 </footer>'''
 
@@ -467,7 +467,7 @@ INSTALLMENT = '''<section class="section section--dark" id="installment">
 PAGES.append(dict(
     slug="implantation.html",
     crumb="Имплантация",
-    title="Имплантация зубов в Астане с гарантией 10 лет | Dinastiya Stom Clinic",
+    title="Имплантация зубов в Астане с гарантией 10 лет | Dinastiya StomClinic",
     description="Имплантация зубов в Астане: импланты SIN, Straumann, Osstem и Neodent, All-on-4 / All-on-6, фиксированная цена, рассрочка 0-0-24. Гарантия 10 лет.",
     eyebrow="Имплантация",
     h1="Имплантация зубов <em>с&nbsp;гарантией 10&nbsp;лет</em>",
@@ -516,7 +516,7 @@ PAGES.append(dict(
 PAGES.append(dict(
     slug="therapy.html",
     crumb="Лечение зубов",
-    title="Лечение зубов и ортодонтия в Астане: кариес, эндодонтия, брекеты | Dinastiya Stom Clinic",
+    title="Лечение зубов и ортодонтия в Астане: кариес, эндодонтия, брекеты | Dinastiya StomClinic",
     description="Лечение кариеса и эндодонтическое лечение в Астане, лечение зубов под микроскопом взрослым и детям, ортодонтия: брекеты, элайнеры, пластинки, капы, ретейнеры. Консультация 5 000 ₸, лечение от 30 000 ₸.",
     eyebrow="Терапия и ортодонтия",
     h1="Лечение зубов: <em>кариес, эндодонтия, ортодонтия</em>",
@@ -562,8 +562,8 @@ PAGES.append(dict(
 PAGES.append(dict(
     slug="orthopedics.html",
     crumb="Ортопедия",
-    title="Ортопедия в Астане: коронки, виниры, протезирование зубов | Dinastiya Stom Clinic",
-    description="Стоматологическая ортопедия в Астане: коронки, виниры и другие конструкции, восстановление зубного ряда. Коронка за 7–10 дней. Консультация ортопеда 5 000 ₸. Dinastiya Stom Clinic, пр. Туран 34Б.",
+    title="Ортопедия в Астане: коронки, виниры, протезирование зубов | Dinastiya StomClinic",
+    description="Стоматологическая ортопедия в Астане: коронки, виниры и другие конструкции, восстановление зубного ряда. Коронка за 7–10 дней. Консультация ортопеда 5 000 ₸. Dinastiya StomClinic, пр. Туран 34Б.",
     eyebrow="Ортопедия",
     h1="Ортопедия: <em>коронки, виниры, восстановление</em>",
     lead="Восстанавливаем зубной ряд с помощью коронок, виниров и других ортопедических конструкций, чтобы результат выглядел естественно и был удобным.",
@@ -601,14 +601,14 @@ PAGES.append(dict(
 PAGES.append(dict(
     slug="periodontics.html",
     crumb="Пародонтология",
-    title="Пародонтология в Астане: лечение дёсен | Dinastiya Stom Clinic",
-    description="Пародонтология в Астане: лечение заболеваний дёсен и тканей вокруг зуба. Приём пародонтолога в Dinastiya Stom Clinic, пр. Туран 34Б.",
+    title="Пародонтология в Астане: лечение дёсен | Dinastiya StomClinic",
+    description="Пародонтология в Астане: лечение заболеваний дёсен и тканей вокруг зуба. Приём пародонтолога в Dinastiya StomClinic, пр. Туран 34Б.",
     eyebrow="Пародонтология",
     h1="Пародонтология: <em>здоровые дёсны</em>",
     lead="Лечим заболевания дёсен и тканей, которые удерживают зуб. Приём ведёт пародонтолог, он же терапевт и хирург.",
     wa="Здравствуйте! Хочу записаться к пародонтологу.",
     facts=[("1", "специалист: пародонтолог, терапевт, хирург"), ("снимок", "прицельный снимок зуба"), ("взрослым", "приём пародонтолога")],
-    hero_kind="arch", hero_img="img/team.webp", hero_alt="Команда врачей Dinastiya Stom Clinic",
+    hero_kind="arch", hero_img="img/team.webp", hero_alt="Команда врачей Dinastiya StomClinic",
     body=(
         split_block("Что лечим", "Забота о дёснах и пародонте",
                     "Здоровые дёсны нужны и для своих зубов, и для имплантов. Врач осматривает полость рта и подбирает лечение под ваш случай.",
@@ -637,7 +637,7 @@ PAGES.append(dict(
 PAGES.append(dict(
     slug="kids.html",
     crumb="Детская стоматология",
-    title="Детская стоматология в Астане | Dinastiya Stom Clinic",
+    title="Детская стоматология в Астане | Dinastiya StomClinic",
     description="Детская стоматология в Астане: детский терапевт-хирург, лечение зубов под микроскопом детям. Консультация детского врача 5 000 ₸.",
     eyebrow="Детская стоматология",
     h1="Детская стоматология <em>с&nbsp;бережным подходом</em>",
@@ -681,7 +681,7 @@ def page404():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Страница не найдена | Dinastiya Stom Clinic</title>
+  <title>Страница не найдена | Dinastiya StomClinic</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#fbf9f4">
   <link rel="icon" href="/img/logo.webp" type="image/webp">
@@ -728,7 +728,7 @@ def main():
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Ортодонтия | Dinastiya Stom Clinic</title>
+  <title>Ортодонтия | Dinastiya StomClinic</title>
   <meta name="robots" content="noindex">
   <link rel="canonical" href="{SITE}/therapy">
   <meta http-equiv="refresh" content="0; url=/therapy#ortho">
