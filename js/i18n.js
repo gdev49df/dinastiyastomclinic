@@ -30,13 +30,13 @@ window.I18N = {
   "7–10 күн",
   "7–10 days"
  ],
- "Dinastiya StomClinic — стоматология в Астане: имплантация, ортодонтия, лечение": [
-  "Dinastiya StomClinic — Астанадағы стоматология: имплантация, ортодонтия, емдеу",
-  "Dinastiya StomClinic — dentistry in Astana: implants, orthodontics, treatment"
+ "Dinastiya Stom Clinic — стоматология в Астане: имплантация, ортодонтия, лечение": [
+  "Dinastiya Stom Clinic — Астанадағы стоматология: имплантация, ортодонтия, емдеу",
+  "Dinastiya Stom Clinic — dentistry in Astana: implants, orthodontics, treatment"
  ],
- "© 2024–2026 Dinastiya StomClinic. Все права защищены.": [
-  "© 2024–2026 Dinastiya StomClinic. Барлық құқықтар қорғалған.",
-  "© 2024–2026 Dinastiya StomClinic. All rights reserved."
+ "© 2024–2026 Dinastiya Stom Clinic. Все права защищены.": [
+  "© 2024–2026 Dinastiya Stom Clinic. Барлық құқықтар қорғалған.",
+  "© 2024–2026 Dinastiya Stom Clinic. All rights reserved."
  ],
  "Адрес": [
   "Мекенжайы",
@@ -266,9 +266,9 @@ window.I18N = {
   "Балалар стоматологиясы",
   "Paediatric dentistry"
  ],
- "Детская стоматология в Астане | Dinastiya StomClinic": [
-  "Астанадағы балалар стоматологиясы | Dinastiya StomClinic",
-  "Paediatric dentistry in Astana | Dinastiya StomClinic"
+ "Детская стоматология в Астане | Dinastiya Stom Clinic": [
+  "Астанадағы балалар стоматологиясы | Dinastiya Stom Clinic",
+  "Paediatric dentistry in Astana | Dinastiya Stom Clinic"
  ],
  "Детский стоматолог-терапевт": [
   "Балалар стоматолог-терапевті",
@@ -394,9 +394,9 @@ window.I18N = {
   "Тіс имплантациясы",
   "Dental implants"
  ],
- "Имплантация зубов в Астане с гарантией 10 лет | Dinastiya StomClinic": [
-  "Астанада 10 жыл кепілдікпен тіс имплантациясы | Dinastiya StomClinic",
-  "Dental implants in Astana with a 10-year warranty | Dinastiya StomClinic"
+ "Имплантация зубов в Астане с гарантией 10 лет | Dinastiya Stom Clinic": [
+  "Астанада 10 жыл кепілдікпен тіс имплантациясы | Dinastiya Stom Clinic",
+  "Dental implants in Astana with a 10-year warranty | Dinastiya Stom Clinic"
  ],
  "Имплантация и лечение зубов": [
   "Тіс имплантациясы және емдеу",
@@ -602,9 +602,9 @@ window.I18N = {
   "Тіс емдеу",
   "Dental treatment"
  ],
- "Лечение зубов и ортодонтия в Астане: кариес, эндодонтия, брекеты | Dinastiya StomClinic": [
-  "Астанада тіс емдеу және ортодонтия: кариес, эндодонтия, брекеттер | Dinastiya StomClinic",
-  "Dental treatment and orthodontics in Astana: cavities, root canals, braces | Dinastiya StomClinic"
+ "Лечение зубов и ортодонтия в Астане: кариес, эндодонтия, брекеты | Dinastiya Stom Clinic": [
+  "Астанада тіс емдеу және ортодонтия: кариес, эндодонтия, брекеттер | Dinastiya Stom Clinic",
+  "Dental treatment and orthodontics in Astana: cavities, root canals, braces | Dinastiya Stom Clinic"
  ],
  "Лечение зубов под микроскопом взрослым": [
   "Ересектерге микроскоппен тіс емдеу",
@@ -806,9 +806,9 @@ window.I18N = {
   "Ортопедия",
   "Prosthodontics"
  ],
- "Ортопедия в Астане: коронки, виниры, протезирование зубов | Dinastiya StomClinic": [
-  "Астанадағы ортопедия: коронкалар, винирлер, тіс протездеу | Dinastiya StomClinic",
-  "Prosthodontics in Astana: crowns, veneers, dental prosthetics | Dinastiya StomClinic"
+ "Ортопедия в Астане: коронки, виниры, протезирование зубов | Dinastiya Stom Clinic": [
+  "Астанадағы ортопедия: коронкалар, винирлер, тіс протездеу | Dinastiya Stom Clinic",
+  "Prosthodontics in Astana: crowns, veneers, dental prosthetics | Dinastiya Stom Clinic"
  ],
  "Ортопедия:": [
   "Ортопедия:",
@@ -874,9 +874,9 @@ window.I18N = {
   "Пародонтология",
   "Periodontics"
  ],
- "Пародонтология в Астане: лечение дёсен | Dinastiya StomClinic": [
-  "Астанадағы пародонтология: қызыл иекті емдеу | Dinastiya StomClinic",
-  "Periodontics in Astana: gum treatment | Dinastiya StomClinic"
+ "Пародонтология в Астане: лечение дёсен | Dinastiya Stom Clinic": [
+  "Астанадағы пародонтология: қызыл иекті емдеу | Dinastiya Stom Clinic",
+  "Periodontics in Astana: gum treatment | Dinastiya Stom Clinic"
  ],
  "Пародонтология:": [
   "Пародонтология:",
@@ -959,10 +959,10 @@ window.I18N = {
   "After the examination the doctor draws up a treatment plan at a fixed price. A surgeon consultation costs 5,000 ₸."
  ],
  "Почему выбирают": ["Неге", "Why patients choose"],
- "Dinastiya StomClinic": ["Dinastiya StomClinic таңдайды", "Dinastiya StomClinic"],
- "Почему выбирают Dinastiya StomClinic": [
-  "Неге Dinastiya StomClinic таңдайды",
-  "Why patients choose Dinastiya StomClinic"
+ "Dinastiya Stom Clinic": ["Dinastiya Stom Clinic таңдайды", "Dinastiya Stom Clinic"],
+ "Почему выбирают Dinastiya Stom Clinic": [
+  "Неге Dinastiya Stom Clinic таңдайды",
+  "Why patients choose Dinastiya Stom Clinic"
  ],
  "Почему мы": [
   "Неге біз",
@@ -1144,9 +1144,9 @@ window.I18N = {
   "Астанадағы стоматология",
   "Dentistry in Astana"
  ],
- "Страница не найдена | Dinastiya StomClinic": [
-  "Бет табылмады | Dinastiya StomClinic",
-  "Page not found | Dinastiya StomClinic"
+ "Страница не найдена | Dinastiya Stom Clinic": [
+  "Бет табылмады | Dinastiya Stom Clinic",
+  "Page not found | Dinastiya Stom Clinic"
  ],
  "Сыздыкова Айнур Сериковна": [
   "Сыздыкова Айнур Сериковна",

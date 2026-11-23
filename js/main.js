@@ -24,7 +24,7 @@
       if (p.photo) {
         var img = document.createElement("img");
         img.src = p.photo;
-        img.alt = p.name || "Врач клиники Dinastiya StomClinic";
+        img.alt = p.name || "Врач клиники Dinastiya Stom Clinic";
         img.loading = "lazy";
         img.width = 340;
         img.height = 400;
