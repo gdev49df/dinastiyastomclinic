@@ -83,7 +83,7 @@ def header():
 
 
 GIS = "https://2gis.kz/astana/search/Dinastiya%20Stom%20Clinic"
-EMAIL = "dinastiyastomclinic@mail.ru"
+EMAIL = "dinastiya.stomclinic@mail.ru"
 
 
 def footer_html(on_index=False):

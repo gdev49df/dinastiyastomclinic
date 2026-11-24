@@ -5,7 +5,7 @@ window.CLINIC = {
   phoneRaw: "+77767732421",
   whatsapp: "77767732421",
   instagram: "dinastiyastomclinic",
-  email: "dinastiyastomclinic@mail.ru",
+  email: "dinastiya.stomclinic@mail.ru",
   address: "Астана, проспект Туран, 34Б",
   hours: "Пн–Пт 9:00–20:00, Сб–Вс 10:00–20:00",
   gis: "https://2gis.kz/astana/search/Dinastiya%20Stom%20Clinic",
