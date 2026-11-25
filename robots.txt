@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://dinastiyastomclinic.kz/sitemap.xml
+Sitemap: https://dinastiyastomclinic.com/sitemap.xml
