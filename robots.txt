@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://dinastiyastomclinic.gdev.uk/sitemap.xml
+Sitemap: https://dinastiyastomclinic.com/sitemap.xml
