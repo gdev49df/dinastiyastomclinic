@@ -13,7 +13,7 @@ from html import escape
 from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = "https://dinastiyastomclinic.com"
+SITE = "https://dinastiyastomclinic.gdev.uk"
 PHONE = "+7 776 773 24 21"
 PHONE_RAW = "+77767732421"
 WA = "77767732421"
